@@ -10,10 +10,37 @@ public class exerciseChallenge {
         //testLeapYear();
         //testDecimalComparer();
         //testEqualSumChecker();
-        testTeenNumberChecker();
-
+        //testTeenNumberChecker();
+        //testAreaCalculator();
+        //testMinutesToYearsDayCalculator();
+        //testIntEqualityPrinter();
+        testCatPlayingJava();
+        
 
     } 
+    public static void testCatPlayingJava(){
+        System.out.println(CatPlaying.isCatPlaying(true, 10));
+        System.out.println(CatPlaying.isCatPlaying(false, 36));
+        System.out.println(CatPlaying.isCatPlaying(false, 35));
+    }
+    public static void testIntEqualityPrinter(){
+        IntEqualityPrinter.printEqual(1, 1, 1);
+        IntEqualityPrinter.printEqual(1, 1, 2);
+        IntEqualityPrinter.printEqual(-1, -1, -1);
+        IntEqualityPrinter.printEqual(1, 2, 3);
+    }
+    public static void testMinutesToYearsDayCalculator(){
+        MinutesToYearsDaysCalculator.printYearsAndDays(-525600);
+        //MinutesToYearsDaysCalculator.printYearsAndDays(1051200);
+        //MinutesToYearsDaysCalculator.printYearsAndDays(561600);
+    }
+
+    public static void testAreaCalculator(){
+        System.out.println(AreaCalculator.area(5.0));
+        System.out.println(AreaCalculator.area(-1));
+        System.out.println(AreaCalculator.area(5.0, 4.0));
+        System.out.println(AreaCalculator.area(-1.0,4.0));
+    }
     public static void testTeenNumberChecker(){
       System.out.println(TeenNumberChecker.hasTeen(9, 99, 19));
       System.out.println(TeenNumberChecker.hasTeen(23, 15, 42));
