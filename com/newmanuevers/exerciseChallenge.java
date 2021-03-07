@@ -1,4 +1,5 @@
-package newmanuevers;
+
+
 
 public class exerciseChallenge {
     
@@ -14,10 +15,38 @@ public class exerciseChallenge {
         //testAreaCalculator();
         //testMinutesToYearsDayCalculator();
         //testIntEqualityPrinter();
-        testCatPlayingJava();
+        //testCatPlayingJava();
+        //testNumberInWord();
+        //testNumberOfDaysInMonth();
+        testSumOdd();
+
         
 
     } 
+    public static void testSumOdd(){
+        System.out.println(SumOddRange.sumOdd(1, 100));
+        System.out.println(SumOddRange.sumOdd(-1, 100));
+        System.out.println(SumOddRange.sumOdd(100, 100));
+        System.out.println(SumOddRange.sumOdd(13, 13));
+        System.out.println(SumOddRange.sumOdd(100, -100));
+        System.out.println(SumOddRange.sumOdd(100, 1000));
+    }
+    public static void testNumberOfDaysInMonth(){
+        // System.out.println(NumberOfDaysInMonth.isLeapYear(-1600));
+        // System.out.println(NumberOfDaysInMonth.isLeapYear(1600));
+        // System.out.println(NumberOfDaysInMonth.isLeapYear(2017));
+        // System.out.println(NumberOfDaysInMonth.isLeapYear(2000));
+
+        System.out.println(NumberOfDaysInMonth.getDaysInMonth(1, 2020));
+        System.out.println(NumberOfDaysInMonth.getDaysInMonth(2, 2020));
+        System.out.println(NumberOfDaysInMonth.getDaysInMonth(2, 2018));
+        System.out.println(NumberOfDaysInMonth.getDaysInMonth(-1, 2020));
+        System.out.println(NumberOfDaysInMonth.getDaysInMonth(1, -2020));
+    }
+
+    public static void testNumberInWord(){
+        NumberInWord.printNumberInWord(5);
+    }
     public static void testCatPlayingJava(){
         System.out.println(CatPlaying.isCatPlaying(true, 10));
         System.out.println(CatPlaying.isCatPlaying(false, 36));

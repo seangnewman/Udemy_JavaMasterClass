@@ -1,4 +1,4 @@
-package newmanuevers;
+
 
 public class LeapYear {
     public static boolean isLeapYear(int year){
