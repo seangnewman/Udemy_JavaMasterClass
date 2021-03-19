@@ -4,25 +4,81 @@
 public class exerciseChallenge {
     
     public static void main(String[] args) {
-        
-        //testSpeedConverter();
-        //testMegaBytesConverter();
-        //testBarkingDog();
-        //testLeapYear();
-        //testDecimalComparer();
-        //testEqualSumChecker();
-        //testTeenNumberChecker();
-        //testAreaCalculator();
-        //testMinutesToYearsDayCalculator();
-        //testIntEqualityPrinter();
-        //testCatPlayingJava();
-        //testNumberInWord();
-        //testNumberOfDaysInMonth();
-        testSumOdd();
-
-        
-
+      
+        //testPerfectNumber();
+        testNumberToWords();
+      
     } 
+    public static void testNumberToWords(){
+        // System.out.println(NumberToWords.getDigitCount(0));
+        // System.out.println(NumberToWords.getDigitCount(123));
+        // System.out.println(NumberToWords.getDigitCount(-12));
+        // System.out.println(NumberToWords.getDigitCount(5200));
+        // System.out.println( NumberToWords.reverse(-121));
+        // System.out.println( NumberToWords.reverse(1212));
+        // System.out.println( NumberToWords.reverse(1234));
+        // System.out.println( NumberToWords.reverse(1));
+
+        NumberToWords.numberToWords(123);
+        NumberToWords.numberToWords(1010);
+        NumberToWords.numberToWords(1000);
+        NumberToWords.numberToWords(-12);
+    }
+    public static void testPerfectNumber()
+    {
+        System.out.println(PerfectNumber.isPerfectNumber(6));
+        System.out.println(PerfectNumber.isPerfectNumber(28));
+        System.out.println(PerfectNumber.isPerfectNumber(5));
+        System.out.println(PerfectNumber.isPerfectNumber(1));
+    }
+    public static void testFactorPrinter()
+    {
+        FactorPrinter.printFactors(6);
+        FactorPrinter.printFactors(32);
+        FactorPrinter.printFactors(10);
+        FactorPrinter.printFactors(-1);
+    }
+    
+    public static void testGreatestCommonDivisor()
+    {
+        System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(25, 15));
+        System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(12, 30));
+        System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(9, 18));
+        System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(81, 153));
+    }
+    public static void testLastDigitChecker()
+    {
+        System.out.println( LastDigitChecker.hasSameLastDigit(41, 22, 71));
+        System.out.println( LastDigitChecker.hasSameLastDigit(23, 32, 42));
+        System.out.println( LastDigitChecker.hasSameLastDigit(9, 99, 999));
+    }
+    public static void testSharedDigit()
+    {
+        System.out.println( SharedDigit.hasSharedDigit(12, 23));
+        System.out.println( SharedDigit.hasSharedDigit(9, 99));
+        System.out.println( SharedDigit.hasSharedDigit(15, 55));
+    }
+    public static void testEventDigitSum()
+    {
+        System.out.println(EvenDigitSum.getEvenDigitSum(123456789));
+        System.out.println(EvenDigitSum.getEvenDigitSum(252));
+        System.out.println(EvenDigitSum.getEvenDigitSum(-22));
+    }
+    public static void testFirstAndLastDigitSum()
+    {
+        System.out.println( FirstAndLastDigitSum.sumFirstAndLastDigit(252));
+        System.out.println( FirstAndLastDigitSum.sumFirstAndLastDigit(257));
+        System.out.println( FirstAndLastDigitSum.sumFirstAndLastDigit(0));
+        System.out.println( FirstAndLastDigitSum.sumFirstAndLastDigit(5));
+        System.out.println( FirstAndLastDigitSum.sumFirstAndLastDigit(-10));
+    }
+
+    public static void testNumberPalindrome()
+    {
+        System.out.println(NumberPalindrome.isPalindrome(-1221));
+        System.out.println(NumberPalindrome.isPalindrome(707));
+        System.out.println(NumberPalindrome.isPalindrome(11212));
+    }
     public static void testSumOdd(){
         System.out.println(SumOddRange.sumOdd(1, 100));
         System.out.println(SumOddRange.sumOdd(-1, 100));
