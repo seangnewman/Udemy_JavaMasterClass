@@ -6,9 +6,32 @@ public class exerciseChallenge {
     public static void main(String[] args) {
       
         //testPerfectNumber();
-        testNumberToWords();
+        //testNumberToWords();
+        //testFlourPacker();
+        //testLargestPrime();
+        testDiagonalStar();
       
     } 
+    public static void testDiagonalStar(){
+        DiagonalStar.printSquareStar(2);
+    }
+    public static void testLargestPrime(){
+        System.out.println(LargestPrime.getLargestPrime(0));
+        System.out.println(LargestPrime.getLargestPrime(21));
+        System.out.println(LargestPrime.getLargestPrime(217));
+        System.out.println(LargestPrime.getLargestPrime(45));
+        System.out.println(LargestPrime.getLargestPrime(-1));
+        System.out.println(LargestPrime.getLargestPrime(2));
+    }
+    public static void testFlourPacker(){
+        System.out.println(FlourPacker.canPack(1, 0, 4));
+        System.out.println(FlourPacker.canPack(1, 0, 5));
+        System.out.println(FlourPacker.canPack(0, 5, 4));
+        System.out.println(FlourPacker.canPack(2, 2, 11));
+        System.out.println(FlourPacker.canPack(-3, 2, 12));
+        System.out.println(FlourPacker.canPack(2, 1, 5));
+        System.out.println(FlourPacker.canPack(4, 18, 19));
+    }
     public static void testNumberToWords(){
         // System.out.println(NumberToWords.getDigitCount(0));
         // System.out.println(NumberToWords.getDigitCount(123));
