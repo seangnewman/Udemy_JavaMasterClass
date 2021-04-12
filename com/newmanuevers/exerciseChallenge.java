@@ -1,24 +1,152 @@
-
-
-
 public class exerciseChallenge {
     
     public static void main(String[] args) {
-      
-        //testPerfectNumbecr();
-        //testNumberToWords();
-        //testFlourPacker();
-        //testLargestPrime();
-        //testDiagonalStar();
-        //InputCalculator.inputThenPrintSumAndAverage();
-        testPaintJob();
+     
+        //testCylinder();
+        //testPoolArea();
+        //testComposition();
+        testPrinter();
       
     } 
+    public static void testPrinter(){
+        Printer printer = new Printer(50, true);
+        System.out.println(printer.addToner(50));
+        System.out.println("initial page count = " + printer.getPagesPrinted());
+
+        int pagesPrinted = printer.printPages(4);
+        System.out.println("Pages printed was " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted());
+
+        pagesPrinted = printer.printPages(2);
+        System.out.println("Pages printed was " + pagesPrinted + " new total print count for printer = " + printer.getPagesPrinted());
+        
+
+    }
+    public static void testComposition(){
+        Composition.Wall wall1 = new Composition.Wall("West");
+        Composition.Wall wall2 = new Composition.Wall("East");
+        Composition.Wall wall3 = new Composition.Wall("South");
+        Composition.Wall wall4 = new Composition.Wall("North");
+
+        Composition.Ceiling ceiling = new Composition.Ceiling(12, 55);
+
+        Composition.Bed bed = new Composition.Bed("Modern", 4,3,2,1);
+        Composition.Lamp lamp = new Composition.Lamp("Classic", false, 75);
+        Composition.BedRoom bedRoom = new Composition.BedRoom("YOUR NAME HERE", wall1, wall2, wall3, wall4, ceiling, bed, lamp);
+        bedRoom.makeBed();
+        bedRoom.getLamp().turnOn();
+
+
+
+    }
+    public static void testPoolArea(){
+        Rectangle rectangle = new Rectangle(5, 10);
+        System.out.println("rectangle.width= " + rectangle.getWidth());
+        System.out.println("rectangle.length= " + rectangle.getLength());
+        System.out.println("rectangle.area= " + rectangle.getArea());
+
+        Cuboid cuboid = new Cuboid(5, 10, 5);
+        System.out.println("cuboid.width= " + cuboid.getWidth());
+        System.out.println("cuboid.length= " + cuboid.getLength());
+        System.out.println("cuboid.area= " + cuboid.getArea());
+        System.out.println("cuboid.height= " + cuboid.getHeight());
+        System.out.println("cuboid.volume= " + cuboid.getVolume());
+
+
+
+    }
+    public static void testCylinder(){
+        Circle circle = new Circle(3.75);
+        System.out.println("cirecle.radius= " + circle.getRadius());
+        System.out.println("cirecle.area= " + circle.getArea());
+
+        Cylinder cylinder = new Cylinder(5.55, 7.25);
+        System.out.println("cylinder.radius= " + cylinder.getRadius());
+        System.out.println("cylinder.height= " + cylinder.getHeight());
+        System.out.println("cylinder.area= " + cylinder.getArea());
+        System.out.println("cylinder.volume= " + cylinder.getVolume());
+
+    }
+    public static void testComplexNumber(){
+        ComplexNumber one = new ComplexNumber(1.0, 1.0);
+        ComplexNumber number = new ComplexNumber(2.5, -1.5);
+        one.add(1, 1);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        one.subtract(number);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        number.subtract(one);
+        System.out.println("number.real= " + number.getReal());
+        System.out.println("number.imaginary= " + number.getImaginary());
+        
+
+
+
+
+    }
+    public static void testCarpetCost(){
+        Carpet carpet = new Carpet(3.5);
+        Floor floor = new Floor(2.75, 4.0);
+        Calculator calculator = new Calculator(floor, carpet);
+        System.out.println("total=" + calculator.getTotalCost());
+
+        carpet = new Carpet(1.5);
+        floor = new Floor(5.4, 4.5);
+        calculator = new Calculator(floor, carpet);
+        System.out.println("total=" + calculator.getTotalCost());
+
+    }
+    public static void testPoint(){
+        Point first = new Point(6,5);
+        Point second = new Point(3, 1);
+        System.out.println("distance(0,0)= " + first.distance());
+        System.out.println("distance(second= " + first.distance(second));
+        System.out.println("distance(2,1)= " + first.distance(2, 2));
+        Point point = new Point();
+        System.out.println("distance()= " + point.distance());
+    }
+    public static void testWall(){
+        Wall wall = new Wall(5,4);
+        System.out.println("area= " + wall.getArea());
+
+        wall.setHeight(-1.5);
+        System.out.println("width= " + wall.getWidth());
+        System.out.println("height= " + wall.getHeight());
+        System.out.println("area" + wall.getArea());
+    }
+    public static void testPerson(){
+        Person person = new Person();
+        person.setFirstName("");
+        person.setLastName("");
+        person.setAge(10);
+        System.out.println("fullName= " + person.getFullName());
+        System.out.println("teen= " + person.isTeen());
+        System.out.println(person.getFullName());
+        person.setFirstName("John");
+        person.setAge(18);
+        System.out.println("fullName= " + person.getFullName());
+        System.out.println("teen= " + person.isTeen());
+        person.setLastName("Smith");
+        System.out.println(person.getFullName()); 
+    }
+
+    public static void testSimpleCalculator(){
+        SimpleCalculator calculator = new SimpleCalculator();
+        calculator.setFirstNumber(5.0);
+        calculator.setSecondNumber(4);
+        System.out.println("add= " + calculator.getAdditionResult());
+        System.out.println("subtract= " + calculator.getSubtractionResult());
+        calculator.setFirstNumber(5.25);
+        calculator.setSecondNumber(0);
+        System.out.println("multiply= " + calculator.getMultiplicationResult());
+        System.out.println("divide=" + calculator.getDivisionResult());
+    }
+
     public static void testPaintJob(){
-        System.out.println(PaintJob.getBucketCount(0.0, 2.1, 1.5, 7));
-        System.out.println(PaintJob.getBucketCount(-3.4, 2.1, 1.5, 2));
-        System.out.println(PaintJob.getBucketCount(3.4, 2.1, 1.5, 2));
-        System.out.println(PaintJob.getBucketCount(2.75, 3.25, 2.5, 1));
+        // System.out.println(PaintJob.getBucketCount(0.0, 2.1, 1.5, 7));
+        // System.out.println(PaintJob.getBucketCount(-3.4, 2.1, 1.5, 2));
+        // System.out.println(PaintJob.getBucketCount(3.4, 2.1, 1.5, 2));
+        // System.out.println(PaintJob.getBucketCount(2.75, 3.25, 2.5, 1));
         // System.out.println(PaintJob.getBucketCount(-3.4, 2.1, 1.5));
         // System.out.println(PaintJob.getBucketCount(3.4, 2.1, 1.5));
         // System.out.println(PaintJob.getBucketCount(7.25,4.3, 2.35));
