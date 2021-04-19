@@ -1,3 +1,5 @@
+import Composition.Hamburger;
+
 public class exerciseChallenge {
     
     public static void main(String[] args) {
@@ -5,9 +7,79 @@ public class exerciseChallenge {
         //testCylinder();
         //testPoolArea();
         //testComposition();
-        testPrinter();
+        //testPrinter();
+        //testCar();
+        //testHamburger();
+        //testSortedArray();
+        //testMinimumElement();
+        testReverseArray();
       
     } 
+    public static void testReverseArray(){
+        int[] rArray = {5,4,3,2,1};
+        ReverseArray.reverse(rArray);
+    }
+
+    public static void testMinimumElement(){
+        
+        // int size = MinimumElement.readInteger();
+          
+
+        // int[] newArray = MinimumElement.readElements(size);
+        // int minValue = MinimumElement.FindMin(newArray);
+         
+
+    }
+    public static void testSortedArray(){
+        SortedArray sortedArray = new SortedArray();
+        int[] unsortedArray = sortedArray.getIntegers(5);
+        sortedArray.printArray(unsortedArray);
+        int[] newSortedArray = sortedArray.sortIntegers(unsortedArray);
+        sortedArray.printArray(newSortedArray);
+
+    }
+    public static void testHamburger(){
+        Hamburger hamburger = new Hamburger("Basic", "Sausage", 3.56, "White");
+        hamburger.addHamburgerAddition1("Tomato", 0.27);
+        hamburger.addHamburgerAddition2("Lettuce", 0.75);
+        hamburger.addHamburgerAddition3("Cheese", 1.13);
+        System.out.println("Total Burger price is " + hamburger.itemizehamburger());
+
+        DeluxBurger db = new DeluxBurger();
+        db.addHamburgerAddition3("Should not do this", 50.53);
+        System.out.println("Total Delux Burger price is " + db.itemizehamburger());
+
+        HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
+        healthyBurger.addHamburgerAddition1("Egg", 5.43);
+        healthyBurger.addHamburgerAddition2("Lentils", 3.41);
+        System.out.println("Total Healthy Burger price is " + healthyBurger.itemizehamburger());
+
+
+    }
+    public static void testCar(){
+        Polymorphism.Car car = new Polymorphism.Car(8, "Base Car");
+        System.out.println(car.startEngine());
+        System.out.println(car.accelerate());
+        System.out.println(car.brake());
+
+        Polymorphism.Mitsubishi mitsubishi = new Polymorphism.Mitsubishi(6, "Outlander VRX 4WD");
+        System.out.println(mitsubishi.startEngine());
+        System.out.println(mitsubishi.accelerate());
+        System.out.println(mitsubishi.brake());
+
+        Polymorphism.Holden holden = new Polymorphism.Holden(6, "Holden Commodore");
+        System.out.println(holden.startEngine());
+        System.out.println(holden.accelerate());
+        System.out.println(holden.brake());
+
+        Polymorphism.Ford ford = new Polymorphism.Ford(6, "Ford Falcon");
+        System.out.println(ford.startEngine());
+        System.out.println(ford.accelerate());
+        System.out.println(ford.brake());
+        
+
+
+    }
     public static void testPrinter(){
         Printer printer = new Printer(50, true);
         System.out.println(printer.addToner(50));
