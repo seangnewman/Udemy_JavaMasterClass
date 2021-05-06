@@ -1,20 +1,108 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 import Composition.Hamburger;
 
 public class exerciseChallenge {
     
     public static void main(String[] args) {
      
-        //testCylinder();
-        //testPoolArea();
-        //testComposition();
-        //testPrinter();
-        //testCar();
-        //testHamburger();
-        //testSortedArray();
-        //testMinimumElement();
-        testReverseArray();
+        
+        //testMobilePhone();
+        //testBank();
+        testAlbum();
       
     } 
+    public static void testAlbum(){
+         ArrayList<Album> albums = new ArrayList<>();
+         
+         Album album = new Album("Stormbringer", "Deep Purple");
+         album.addSong("Stormbringer", 4.6);
+         album.addSong("Love don't mean a thing", 4.22);
+         album.addSong("Holy man", 4.3);
+         album.addSong("Hold on", 5.6);
+         album.addSong("Lady double dealer", 3.21);
+         album.addSong("You can't do it right", 6.23);
+         album.addSong("High ball shooter", 4.27);
+         album.addSong("The gypsy", 4.2);
+         album.addSong("Soldier of fortune", 3.13);
+         albums.add(album);
+
+         album = new Album("For those about to rock", "AC/DC");
+         album.addSong("For those about to rock", 5.44);
+         album.addSong("I put the finger on you", 3.25);
+         album.addSong("Let's go", 3.45);
+         album.addSong("Inject the venom", 3.33);
+         album.addSong("Snowballed", 4.51);
+         album.addSong("Evil walks", 3.45);
+         album.addSong("C.O.D", 5.25);
+         album.addSong("Breaking the rules", 5.33);
+         album.addSong("Night of the long knives", 5.12);
+         albums.add(album);
+
+         LinkedList<Song> playlist = new LinkedList<>();
+
+         albums.get(0).AddToPlayList("You can't do it right", playlist);
+         albums.get(0).AddToPlayList("Holy man", playlist);
+         albums.get(0).AddToPlayList("Speed king", playlist);
+         albums.get(0).AddToPlayList(9, playlist);
+         albums.get(1).AddToPlayList(3, playlist);
+         albums.get(1).AddToPlayList(2, playlist);
+         albums.get(1).AddToPlayList(24, playlist);
+
+
+         for(Song song: playlist){
+             System.out.println("Now playing " + song.toString());
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    public static void testBank(){
+        Bank bank = new Bank("National Australia Bank");
+        bank.addBranch("Adelaide");
+        bank.addCustomer("Adelaide", "Tim", 50.05);
+        bank.addCustomer("Adelaide", "Mike", 175.34);
+        bank.addCustomer("Adelaide", "Percy", 220.12);
+       
+        System.out.println( bank.addCustomer("Tempe", "Sean", 50.05));
+
+        bank.addCustomerTransaction("Adelaide", "Tim", 44.22);
+        bank.addCustomerTransaction("Adelaide", "Tim", 12.44);
+        bank.addCustomerTransaction("Adelaide", "Percy", 1.65);
+
+
+        bank.listCustomers("Adelaide", true);
+    }
+    public static void testMobilePhone(){
+        MobilePhone newPhone = new MobilePhone("6239103564");
+        newPhone.printContacts();
+        newPhone.addNewContact(Contact.createContact("Sean", "602.916.7967"));
+        newPhone.printContacts();
+        Contact findContact = newPhone.queryContact("Sean");
+        System.out.println(findContact.getName());
+        newPhone.addNewContact(Contact.createContact("Jerry", "602.916.7967"));
+        newPhone.printContacts();
+        newPhone.removeContact(newPhone.queryContact("Jerry"));
+        newPhone.printContacts();
+        newPhone.updateContact(newPhone.queryContact("Sean"), Contact.createContact("Cody", "6232380586"));
+        newPhone.printContacts();
+        
+      
+
+    }
     public static void testReverseArray(){
         int[] rArray = {5,4,3,2,1};
         ReverseArray.reverse(rArray);
