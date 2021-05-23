@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 import Composition.Hamburger;
 
@@ -10,9 +11,108 @@ public class exerciseChallenge {
         
         //testMobilePhone();
         //testBank();
-        testAlbum();
+        //testAlbum();
+        //testPlayer();
+        //testInnerClassAlbum();
+        testMyLinkedList();
       
     } 
+    public static void testMyLinkedList(){
+        //AbstractClass.MyLinkedList list = new AbstractClass.MyLinkedList(null);
+        AbstractClass.SearchTree tree = new AbstractClass.SearchTree(null);
+        //list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
+
+        //String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String stringData = "5 7 3 9 8 2 1 0 4 6";
+        String[] data = stringData.split(" ");
+
+        for(String s : data){
+            //list.addItem(new AbstractClass.Node(s));
+            tree.addItem(new AbstractClass.Node(s));
+        }
+        tree.traverse(tree.getRoot());
+        tree.removeItem(new AbstractClass.Node("3"));
+        tree.traverse(tree.getRoot());
+        
+
+
+
+
+        // list.traverse(list.getRoot());
+        // list.removeItem(new AbstractClass.Node("3"));
+        // list.traverse(list.getRoot());
+       
+       
+       
+
+
+
+    }
+    public static void testInnerClassAlbum(){
+        ArrayList<InnerClass.Album> albums = new ArrayList<>();
+        
+        InnerClass.Album album = new InnerClass.Album("Stormbringer", "Deep Purple");
+        album.addSong("Stormbringer", 4.6);
+        album.addSong("Love don't mean a thing", 4.22);
+        album.addSong("Holy man", 4.3);
+        album.addSong("Hold on", 5.6);
+        album.addSong("Lady double dealer", 3.21);
+        album.addSong("You can't do it right", 6.23);
+        album.addSong("High ball shooter", 4.27);
+        album.addSong("The gypsy", 4.2);
+        album.addSong("Soldier of fortune", 3.13);
+        albums.add(album);
+
+        album = new InnerClass.Album("For those about to rock", "AC/DC");
+        album.addSong("For those about to rock", 5.44);
+        album.addSong("I put the finger on you", 3.25);
+        album.addSong("Let's go", 3.45);
+        album.addSong("Inject the venom", 3.33);
+        album.addSong("Snowballed", 4.51);
+        album.addSong("Evil walks", 3.45);
+        album.addSong("C.O.D", 5.25);
+        album.addSong("Breaking the rules", 5.33);
+        album.addSong("Night of the long knives", 5.12);
+        albums.add(album);
+
+        LinkedList<InnerClass.Song> playlist = new LinkedList<>();
+
+        albums.get(0).addToPlayList("You can't do it right", playlist);
+        albums.get(0).addToPlayList("Holy Man", playlist);
+        albums.get(0).addToPlayList("Speed king", playlist);
+      
+        albums.get(0).addToPlayList(9, playlist);
+        albums.get(1).addToPlayList(3, playlist);
+        albums.get(1).addToPlayList(2, playlist);
+        albums.get(1).addToPlayList(24, playlist);
+
+
+
+        for(InnerClass.Song song: playlist){
+            System.out.println("Now playing " + song.toString());
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+   }
+    public static void testPlayer(){
+        Player player1 = new Player("Thor", 8000, 30000);
+        System.out.println(player1);
+        Monster monster1 = new Monster("Godzilla", 100000, 3000000);
+        System.out.println(monster1);
+    }
+
     public static void testAlbum(){
          ArrayList<Album> albums = new ArrayList<>();
          
@@ -42,13 +142,14 @@ public class exerciseChallenge {
 
          LinkedList<Song> playlist = new LinkedList<>();
 
-         albums.get(0).AddToPlayList("You can't do it right", playlist);
-         albums.get(0).AddToPlayList("Holy man", playlist);
-         albums.get(0).AddToPlayList("Speed king", playlist);
-         albums.get(0).AddToPlayList(9, playlist);
-         albums.get(1).AddToPlayList(3, playlist);
-         albums.get(1).AddToPlayList(2, playlist);
-         albums.get(1).AddToPlayList(24, playlist);
+         albums.get(0).addToPlayList("You can't do it right", playlist);
+         albums.get(0).addToPlayList("Holy Man", playlist);
+         albums.get(0).addToPlayList("Speed king", playlist);
+       
+         albums.get(0).addToPlayList(9, playlist);
+         albums.get(1).addToPlayList(3, playlist);
+         albums.get(1).addToPlayList(2, playlist);
+         albums.get(1).addToPlayList(24, playlist);
 
 
          for(Song song: playlist){
